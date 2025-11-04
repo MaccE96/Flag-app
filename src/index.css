@@ -1,0 +1,270 @@
+:root {
+  --bg: #F2F2F2;
+  --card: #ffffff;
+  --text: #111517; /* svart text */
+  --muted: #475569;
+  --border: #e2e8f0;
+}
+
+[data-theme="dark"] {
+  --bg: #202C36;
+  --card: #2B3844;
+  --text: #ffffff; /* vit text */
+  --muted: #94a3b8;
+  --border: #1f2937;
+}
+
+/* Globala styles */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background-color: var(--card);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.navbar h1 {
+  font-weight: 800;
+}
+
+/* Knapp för tema */
+button.theme-toggle {
+  background: var(--card);
+  color: var(--text);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button.theme-toggle:hover {
+  opacity: 0.8;
+}
+
+/* Textstorlekar enligt guiden */
+main {
+  font-size: 14px; /* homepage */
+}
+
+.country-details {
+  font-size: 16px; /* detail page */
+}
+
+.container {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.country-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  color: var(--text); /* Ärver rätt färg beroende på tema */
+}
+
+.country-card {
+  text-decoration: none;
+  color: var(--text);
+  background-color: var(--card);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.country-card:hover {
+  transform: scale(1.02);
+}
+
+.country-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 1rem;
+}
+
+.country-card h3 
+.country-card p {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+  color: var(--text); 
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--muted); 
+  margin: 0.2rem 0;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  background: var(--card);
+  color: var(--text);
+  border-radius: 0.25rem;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.country-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+}
+
+.country-info img {
+  width: 350px;
+  border-radius: 0.5rem;
+}
+
+.borders {
+  margin-top: 2rem;
+}
+
+.borders h4 {
+  margin-bottom: 0.5rem;
+}
+
+.border-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.border-btn {
+  text-decoration: none;
+  background: var(--card);
+  color: var(--text);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.1s ease;
+}
+
+.border-btn:hover {
+  transform: scale(1.05);
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-input,
+.dropdown {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: var(--card);
+  color: var(--text);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--border);
+  border-top-color: var(--text);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+[data-theme="dark"] .spinner {
+  border-top-color: var(--bg);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--card);
+  color: var(--text);
+  padding: 1.2rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-title {
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.navbar-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-logo img {
+  height: 28px;
+  object-fit: contain;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.theme-toggle:hover {
+  opacity: 0.8;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
