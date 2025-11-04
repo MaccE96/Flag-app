@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import logoLight from "../assets/Techover-logo-dark.png";
-import logoDark from "../assets/Techover-logo.png";
+import logoLight from "../assets/techover-logo-dark.png";
+import logoDark from "../assets/techover-logo.png";
 
 export default function Navbar() {
   const [theme, setTheme] = useState(
