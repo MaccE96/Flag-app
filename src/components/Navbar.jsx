@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import logoLight from "../assets/techover-logo-dark.png";
 import logoDark from "../assets/techover-logo.png";
+import moon from "../assets/moon.svg";
+import moonBordered from "../assets/moon-bordered.svg";
 
 export default function Navbar() {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ||
-      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light")
   );
 
   useEffect(() => {
@@ -29,11 +33,13 @@ export default function Navbar() {
       <button className="theme-toggle" onClick={toggleTheme}>
         {theme === "light" ? (
           <>
-            <span className="icon">🌙</span> Dark Mode
+            <img src={moonBordered} alt="Moon icon" className="icon" />
+            Dark Mode
           </>
         ) : (
           <>
-            <span className="icon">☀️</span> Light Mode
+            <img src={moon} alt="Sun icon" className="icon" />
+            Light Mode
           </>
         )}
       </button>

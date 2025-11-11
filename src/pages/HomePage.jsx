@@ -47,7 +47,6 @@ export default function HomePage() {
   }, [search, region, countries]);
 
   if (loading) return <Loader />;
-
   if (error) return <p>{error}</p>;
 
   return (
@@ -60,10 +59,8 @@ export default function HomePage() {
       <div className="country-grid">
         {filtered.map((country) => (
           <CountryCard
-            key={country.cca3}
-            name={country.name.common}
-            capital={country.capital?.[0] || "Ingen huvudstad"}
-            flag={country.flags.svg}
+            key={country.cca3 || country.name.common}
+            country={country}
           />
         ))}
       </div>

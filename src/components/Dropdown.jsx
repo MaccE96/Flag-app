@@ -7,7 +7,7 @@ export default function Dropdown({ value, onChange }) {
       onChange={(e) => onChange(e.target.value)}
       className="dropdown"
     >
-      <option value="">Alla regioner</option>
+      <option value="">Filter by Region</option>
       {regions.map((region) => (
         <option key={region} value={region}>
           {region}
